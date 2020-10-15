@@ -2,11 +2,11 @@ const { reset } = require('sinon');
 const CustomError = require('../extensions/custom-error');
 
 module.exports = function repeater(str, options) {
-  const separator = options.separator ?? '+';
-  const additionSeparator = options.additionSeparator ?? '|';
+  const separator = options.separator || '+';
+  const additionSeparator = options.additionSeparator || '|';
   const addition = options.addition !== undefined ? options.addition : '';
-  const repeatTimes = options.repeatTimes ?? 1;
-  const additionRepeatTimes = options.additionRepeatTimes ?? 1;
+  const repeatTimes = options.repeatTimes || 1;
+  const additionRepeatTimes = options.additionRepeatTimes || 1;
 
   let resultGeneral = '';
   let result = '';
